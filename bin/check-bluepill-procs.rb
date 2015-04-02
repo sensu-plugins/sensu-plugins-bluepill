@@ -36,11 +36,12 @@
 #   for details.
 #
 
-require 'rubygems' if RUBY_VERSION < '1.9.0'
 require 'sensu-plugin/check/cli'
 require 'English'
 
+#
 # Check application processes running under bluepill control
+#
 class CheckBluepill < Sensu::Plugin::Check::CLI
   # a single application to monitor, or multiple applications, comma-separated.
   # check all applications if option not provided.
@@ -62,7 +63,7 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
     orig
   end
 
-  def bluepill_application_status(name)
+  def bluepill_application_status(name) # rubocop:disable all
     out = { name: [], ok: [], warn: [], crit: [], err: [] }
     app_status = `#{config[:sudo] ? 'sudo ' : nil }bluepill #{name} status 2<&1`
     name = 'Unknown' if name == ''
@@ -94,7 +95,7 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
     out
   end
 
-  def parse_output(out)
+  def parse_output(out) # rubocop:disable all
     puts "***** DEBUG: Full output hash ******\n#{out.inspect}" if config[:debug]
     if !out[:crit].empty?
       critical "Bluepill process(es) critical:\n#{out[:crit].join("\n")}"
@@ -107,7 +108,7 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
     end
   end
 
-  def run
+  def run # rubocop:disable all
     # Check if Bluepill is installed
     `which bluepill`
     # #YELLOW
