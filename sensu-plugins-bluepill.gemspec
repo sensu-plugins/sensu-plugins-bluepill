@@ -34,7 +34,8 @@ Gem::Specification.new do |s|
   s.test_files             = s.files.grep(%r{^(test|spec|features)/})
   s.version                = SensuPluginsBluepill::VERSION
 
-  s.add_runtime_dependency = 'english', '~> 0.6.3'
+  s.add_runtime_dependency 'english', '~> 0.6.3'
+  
 
   s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4.6'
   s.add_development_dependency 'rubocop', '~> 0.17.0'
