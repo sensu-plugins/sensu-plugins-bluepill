@@ -1,6 +1,6 @@
 ## Sensu-Plugins-bluepill
 
-[![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-bluepill.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-bluepill)
+[ ![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-bluepill.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-bluepill)
 [![Gem Version](https://badge.fury.io/rb/sensu-plugins-bluepill.svg)](http://badge.fury.io/rb/sensu-plugins-bluepill)
 [![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-bluepill/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-bluepill)
 [![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-bluepill/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-bluepill)
