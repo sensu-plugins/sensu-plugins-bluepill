@@ -63,7 +63,7 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
     orig
   end
 
-  def bluepill_application_status(name) # rubocop:disable all
+  def bluepill_application_status(name)
     out = { name: [], ok: [], warn: [], crit: [], err: [] }
     app_status = `#{config[:sudo] ? 'sudo ' : nil }bluepill #{name} status 2<&1`
     name = 'Unknown' if name == ''
@@ -71,7 +71,7 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
     puts "***** DEBUG: bluepill #{name} status *****\n#{app_status}" if config[:debug]
     processes_found = 0
     # #YELLOW
-    app_status.each_line do |line| # rubocop:disable Style/Next
+    app_status.each_line do |line|
       if line =~ /(pid:)/
         processes_found += 1
         case line
@@ -95,7 +95,7 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
     out
   end
 
-  def parse_output(out) # rubocop:disable all
+  def parse_output(out)
     puts "***** DEBUG: Full output hash ******\n#{out.inspect}" if config[:debug]
     if !out[:crit].empty?
       critical "Bluepill process(es) critical:\n#{out[:crit].join("\n")}"
@@ -108,11 +108,11 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
     end
   end
 
-  def run # rubocop:disable all
+  def run
     # Check if Bluepill is installed
     `which bluepill`
     # #YELLOW
-    unless $CHILD_STATUS.success? # rubocop:disable IfUnlessModifier
+    unless $CHILD_STATUS.success?
       ok 'bluepill not installed'
     end
 
@@ -120,7 +120,7 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
 
     if config[:apps]
       requested_apps = config[:apps].split(',').map(&:strip) || []
-      puts "***** DEBUG: requested applications: #{requested_apps }*****" if config[:debug]
+      puts "***** DEBUG: requested applications: #{requested_apps}*****" if config[:debug]
       requested_apps.each do |a|
         out = merge_output(out, bluepill_application_status(a))
       end
@@ -142,7 +142,7 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
         # We assume that no found applications is OK, since we only
         # get here if -a option is unset.
         # #YELLOW
-        bluepill_status.each_line do |line| # rubocop:disable Style/Next
+        bluepill_status.each_line do |line|
           if line =~ /^\s \d\.\s/
             app_name = line.split(/^\s \d\.\s/)[1].strip
             # #YELLOW
