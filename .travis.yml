@@ -17,13 +17,13 @@ notifications:
     on_failure: always
 script:
 - bundle exec rake default
-- gem build sensu-plugins-bluepull.gemspec
-- gem install sensu-plugins-bluepull-*.gem
+- gem build sensu-plugins-bluepill.gemspec
+- gem install sensu-plugins-bluepill-*.gem
 deploy:
   provider: rubygems
   api_key:
     secure: HZxzGjETvc0aR7/51iWpMr9SJcqvqWLCm0+dkDhASt/RHrC6XBwgvv9HPQ5YB0wtapL112am3OJU6ZAfAJlfCAx8kXKO9/GiK/vAIzx+B7ETVpfpxSoipb8xwHFdpqRpNLj4I/GOEiU1aBXF/0ZxCRDyZc1z4nnDIdSp4Jmbh6s=
-  gem: sensu-plugins-bluepull
+  gem: sensu-plugins-bluepill
   on:
     tags: true
     all_branches: true
@@ -32,4 +32,4 @@ deploy:
     rvm: 2.2
     rvm: 2.3.0
     rvm: 2.4.1
-    repo: sensu-plugins/sensu-plugins-bluepull
+    repo: sensu-plugins/sensu-plugins-bluepill
