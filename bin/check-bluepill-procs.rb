@@ -59,7 +59,7 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
          description: 'exec bluepill with sudo (needs passwordless)'
 
   def merge_output(orig, add)
-    orig.keys.each { |k| orig[k].push(*add[k]) }
+    orig.each_key { |k| orig[k].push(*add[k]) }
     orig
   end
 
@@ -90,7 +90,7 @@ class CheckBluepill < Sensu::Plugin::Check::CLI
         end
       end
     end
-    out[:err] << name if processes_found == 0
+    out[:err] << name if processes_found.zero?
     puts "***** DEBUG: bluepill #{name} status parsed ******\n#{out.inspect}" if config[:debug]
     out
   end
