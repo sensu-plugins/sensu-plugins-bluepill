@@ -5,6 +5,7 @@ This CHANGELOG follows the format laid out [here](https://github.com/sensu-plugi
 
 ## [Unreleased]
 
+## [3.0.0] - 2018-04-28
 ### Breaking Changes
 - bumped dependency of `sensu-plugin` to 2.x you can read about it  [here](https://github.com/sensu-plugins/sensu-plugin/blob/master/CHANGELOG.md#v145---2017-03-07) (@majormoses)
 
@@ -47,7 +48,8 @@ This CHANGELOG follows the format laid out [here](https://github.com/sensu-plugi
 ### Changed
 - removed cruft from /lib
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-bluepill/compare/2.0.0...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-bluepill/compare/3.0.0...HEAD
+[3.0.0]: https://github.com/sensu-plugins/sensu-plugins-bluepill/compare/2.0.0...3.0.0
 [2.0.0]: https://github.com/sensu-plugins/sensu-plugins-bluepill/compare/1.0.0...2.0.0
 [1.0.0]: https://github.com/sensu-plugins/sensu-plugins-bluepill/compare/0.0.3...1.0.0
 [0.0.3]: https://github.com/sensu-plugins/sensu-plugins-bluepill/compare/0.0.2...0.0.3
